@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AuctionService.Context.Migrations
+namespace AuctionService.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
