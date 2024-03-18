@@ -18,5 +18,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 WebApplication app = builder.Build();
 
 app.MapReverseProxy();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.Run();
