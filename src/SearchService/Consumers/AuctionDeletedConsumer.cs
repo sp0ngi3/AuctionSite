@@ -6,10 +6,8 @@ using SearchService.Models;
 
 namespace SearchService.Consumers
 {
-    public class AuctionDeletedConsumer(ConsumeContext<AuctionDeleted> context) : IConsumer<AuctionDeleted>
+    public class AuctionDeletedConsumer : IConsumer<AuctionDeleted>
     {
-        private readonly ConsumeContext<AuctionDeleted> _context = context;
-
         public async Task Consume(ConsumeContext<AuctionDeleted> context)
         {
             Console.WriteLine("--> Consuming AuctionDeleted: " + context.Message.Id);
@@ -18,7 +16,6 @@ namespace SearchService.Consumers
 
             if (!result.IsAcknowledged)
                 throw new MessageException(typeof(AuctionDeleted), "Problem deleting auction");
-
         }
     }
 }
